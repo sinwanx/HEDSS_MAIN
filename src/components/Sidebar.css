@@ -1,0 +1,175 @@
+/* Sidebar Styles */
+.sidebar {
+  width: 320px; /* Consistent width */
+  height: 100vh;
+  background: linear-gradient(135deg, #1e5083, #1e5083); /* Professional gradient */
+  color: white;
+  padding: 20px;
+  position: fixed;
+  top: 70px; /* Positioned below Topbar */
+  left: 0;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.15); /* Light shadow for elegance */
+  font-family: 'Roboto', sans-serif;
+  z-index: 999;
+  overflow-y: auto; /* Single scrollbar for the entire sidebar */
+  transition: all 0.3s ease-in-out;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #274472 rgba(255, 255, 255, 0.2); /* Consistent scrollbar color */
+}
+
+/* Custom Scrollbar */
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #274472;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Sidebar Title */
+.sidebar-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1); /* Subtle semi-transparent background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Sidebar List */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Sidebar Items */
+.sidebar ul li {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+/* Sidebar Links */
+.sidebar ul li a {
+  color: #e0e6ed; /* Softer white for better contrast */
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08); /* Subtle background for links */
+  transition: all 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Noticeable hover effect */
+  color: #1a2b4e;
+}
+
+.sidebar ul li a.active {
+  background-color: #ffffff; /* Active link background */
+  color: #274472;
+  font-weight: bold;
+}
+
+/* Sidebar Icons */
+.sidebar .sidebar-icon {
+  margin-right: 15px;
+  font-size: 22px;
+}
+
+/* Dropdown Toggles */
+.dropdown-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  padding: 12px 20px;
+  cursor: pointer;
+  color: #e0e6ed;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #1a2b4e;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Radio Buttons */
+.radio-button-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 0;
+}
+
+.radio-button-group input[type='radio'] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #e0e6ed;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: transparent;
+  outline: none;
+}
+
+.radio-button-group input[type='radio']:hover {
+  border-color: #50c1e9; /* Hover effect */
+}
+
+.radio-button-group input[type='radio']:checked {
+  background-color: #ffffff;
+  border-color: #274472;
+  box-shadow: 0 0 5px #50c1e9; /* Glow effect */
+}
+
+.radio-button-group label {
+  color: #e0e6ed;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.radio-button-group label:hover {
+  color: #50c1e9;
+}
+
+/* Nested Dropdown Menu */
+.nested-menu {
+  margin-top: 5px;
+  margin-left: 15px;
+  padding-left: 10px;
+}
+
+/* Ensure smooth scrolling */
+.sidebar ul,
+.dropdown-menu {
+  scroll-behavior: smooth;
+  overflow-y: visible; /* Ensure expanded dropdown fits in view */
+  padding-bottom: 20px;
+}

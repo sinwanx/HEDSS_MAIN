@@ -1,0 +1,180 @@
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgb(247, 247, 249);
+  color: #2d5b8a;
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  z-index: 1000; /* Ensure Topbar is above the Sidebar */
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  overflow: visible; /* Ensure dropdown menu visibility */
+}
+
+
+/* Dashboard Label Styling */
+.dashboard-label {
+  background-color: #2d5b8a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+/* Left Section (Logos and Label) */
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between elements */
+}
+
+/* Primary Logo Styling */
+.topbar-logo {
+  width: 90px; /* Set a consistent width */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Secondary Logo Styling */
+.secondary-logo {
+  width: 70px; /* Smaller size for the secondary logo */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Hover Effects for Logos */
+.topbar-logo:hover,
+.secondary-logo:hover {
+  transform: scale(1.05); /* Slight zoom-in effect on hover */
+}
+
+
+/* Center Section (Title) */
+.topbar-center {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.topbar-title {
+  font-size: 1.7rem; /* Slightly larger font size for prominence */
+  font-weight: 900; /* Maximum boldness */
+  text-transform: uppercase;
+  letter-spacing: 1.2px; /* Slightly increased letter spacing for elegance */
+  color: #2d5b8a; /* Darker color for enhanced visibility */
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+
+/* Right Section (Search Bar, Notification, User) */
+.topbar-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Logout Button Styling */
+.logout-button {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #c0392b;
+}
+
+/* Search Container Styling */
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 4px 12px;
+  max-width: 300px;
+  width: 100%;
+  border: 2px solid #2d5b8a; /* Distinct border for visibility */
+  transition: background-color 0.3s ease;
+}
+
+.search-container:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 0.9rem;
+  padding: 3px;
+  width: 100%;
+  color: #050404;
+}
+
+.search-input::placeholder {
+  color: #bbb;
+}
+
+.search-container:focus-within {
+  background-color: rgba(255, 255, 255, 0.3); /* Highlight on focus */
+}
+
+/* User Avatar */
+.topbar-icon-container {
+  cursor: pointer;
+}
+
+.topbar-icon {
+  font-size: 18px;
+  color: #2d5b8a;
+}
+
+.user-avatar {
+  font-size: 26px; /* Adjusted size for thinner Topbar */
+  border-radius: 50%;
+}
+
+
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .topbar {
+    padding: 8px 10px;
+  }
+
+  .topbar-logo,
+  .topbar-secondary-logo {
+    width: 150px; /* Smaller logos for mobile */
+  }
+
+  .topbar-title {
+    font-size: 1.3rem;
+  }
+
+  .search-container {
+    width: 200px; /* Smaller search bar for mobile */
+  }
+
+  .topbar-right {
+    gap: 8px;
+  }
+}

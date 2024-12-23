@@ -1,0 +1,48 @@
+@import 'leaflet/dist/leaflet.css';
+
+.App {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+.dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #f4f4f4;
+  padding: 20px;
+  text-align: left;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+  background: #e9ecef;
+  padding: 15px;
+  border-radius: 8px;
+}

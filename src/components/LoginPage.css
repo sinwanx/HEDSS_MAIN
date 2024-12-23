@@ -1,0 +1,131 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('../assets/loginbg.jpg') no-repeat center center/cover;
+    /* Replace with your own image path, or use a color or gradient */
+  }
+  
+  .login-box {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    backdrop-filter: blur(7px); /* Adds a blur effect */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  /* Ticker styling */
+  .ticker {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    margin-bottom: 10px; /* Space between the ticker and IWMI logo */
+  }
+  
+  .ticker-inner {
+    display: inline-flex;
+    animation: ticker-slide 15s linear infinite; /* Adjust timing for speed */
+  }
+  
+  .ticker-logo {
+    width: 75px; /* Adjust size of logos as needed */
+    height: auto;
+    margin: 0 20px; /* Space between logos */
+  }
+  
+  /* Ticker animation */
+  @keyframes ticker-slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .logo {
+    width: 200px; /* Adjust this value as needed */
+    height: auto;
+    margin-bottom: 5px; /* Reduce this value to decrease the space */
+  }
+  
+  h2 {
+    color: #004080;
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  h3 {
+    color: #333;
+    font-size: 1rem;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+  
+  p {
+    color: #000000;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Input container styling for icons */
+  .input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  /* Styling for icons inside the input fields */
+  .input-icon {
+    position: absolute;
+    left: 10px;  /* Position the icon on the left side of the input */
+    width: 18px; /* Adjust the width as needed */
+    height: 18px; /* Ensure consistent height */
+    color: #888;
+  }
+  
+  /* Styling for inputs with padding for the icon */
+  .input-container input {
+    width: 100%;
+    padding: 10px 10px 10px 35px; /* Adds space for the icon */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  /* Styling for Remember Me section */
+  .remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px 0;
+    padding-left: 10px;
+  }
+  
+  .remember-me input {
+    margin-right: 5px; /* Adds space between checkbox and label */
+  }
+  
+  .remember-me label {
+    white-space: nowrap; /* Prevents the label text from wrapping to a new line */
+  }
+  
+  .login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #040080;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .login-form button:hover {
+    background-color: #036600;
+  }
+  
