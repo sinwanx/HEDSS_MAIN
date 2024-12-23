@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
 import logo1 from '../assets/nexusgainslogo.jfif'; // Replace with actual logo paths
-import logo2 from '../assets/punjablogo.png';
+import logo2 from '../assets/iwmi.png';
 
 function Home() {
   return (

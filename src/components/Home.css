@@ -19,7 +19,7 @@
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
     max-width: 70%; /* Set a max width to ensure it doesn't span the entire screen */
     width: calc(100% - 300px); /* Account for sidebar width */
-    margin-left: 500px; /* Space from the sidebar */
+    margin-left: 450px; /* Space from the sidebar */
     margin-top: 100px; /* Add space below the top bar */
     color: #000000;
     display: flex;
@@ -113,7 +113,7 @@
 }
 
 .partner-logo {
-    width: 120px; /* Adjust size as needed */
+    width: 350px; /* Adjust size as needed */
     height: auto;
     opacity: 0.8;
     transition: opacity 0.3s;
