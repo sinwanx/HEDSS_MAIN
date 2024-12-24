@@ -1,52 +1,38 @@
 import React, { useEffect, useState, memo } from 'react';
 import { Line } from 'react-chartjs-2';
 import './DataVisualization.css'; // Ensure this file exists in the same directory
+import mockData from '../data/mockData';
 
-const DataVisualization = ({ section, subsection, scenario }) => {
-  const [chartData, setChartData] = useState(null);
+const DataVisualization = ({ section, subsection, scenario, chartType }) => {
+  const [data, setData] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('http://localhost:5000/api/data');
-        const data = await response.json();
-
-        // Filter data based on selected section, subsection, and scenario
-        const filteredData = data.find(
-          (item) =>
-            item.section === section &&
-            item.subsection === subsection &&
-            item.scenario === scenario
-        );
-
-        if (filteredData) {
-          const formattedData = {
-            labels: filteredData.data.map((entry) => entry.year),
-            datasets: [
-              {
-                label: `${subsection} (${scenario})`,
-                data: filteredData.data.map((entry) => entry.value),
-                borderColor: 'rgba(75,192,192,1)',
-                backgroundColor: 'rgba(75,192,192,0.2)',
-              },
-            ],
-          };
-          setChartData(formattedData);
-        } else {
-          setChartData(null);
-        }
-      } catch (error) {
-        console.error('Error fetching data:', error);
+    if (section && subsection && scenario && chartType) {
+      // Fetch the data based on the selected scenario and chart type
+      const scenarioData = mockData[subsection]?.[scenario];
+      if (scenarioData) {
+        setData(scenarioData[chartType]);
       }
-    };
+    }
+  }, [section, subsection, scenario, chartType]);
 
-    fetchData();
-  }, [section, subsection, scenario]);
+  const chartData = {
+    labels: Array.from({ length: 21 }, (_, i) => 2014 + i), // Years from 2014 to 2034
+    datasets: [
+      {
+        label: `${subsection} - ${scenario} (${chartType})`,
+        data: data || [],
+        borderColor: 'rgba(75,192,192,1)',
+        backgroundColor: 'rgba(75,192,192,0.2)',
+        fill: true,
+      },
+    ],
+  };
 
   return (
     <div className="data-visualization">
       <h2>Data Visualization</h2>
-      {chartData ? (
+      {data ? (
         <Line
           data={chartData}
           options={{
@@ -60,7 +46,7 @@ const DataVisualization = ({ section, subsection, scenario }) => {
           }}
         />
       ) : (
-        <p>No data available for the selected options.</p>
+        <p>Please select a scenario to visualize the data.</p>
       )}
     </div>
   );

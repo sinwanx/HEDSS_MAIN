@@ -1,32 +1,25 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Sidebar.css';
 import { GiLandMine, GiWaterDrop, GiFactory, GiSprout } from 'react-icons/gi';
 import { FaUsers, FaCaretDown, FaCaretUp, FaHome } from 'react-icons/fa';
 
-function Sidebar({ setScenario, setSection, setSubsection, setChartType }) {
+function Sidebar({ setScenario, setSection, setSubsection, setChartType, setMetric }) {
   const [dropdowns, setDropdowns] = useState({
     decisionsPolicies: false,
-    waterAllocation: false,
-    landAllocation: false,
-    macroPolicies: false,
-    cropStrategies: false,
-    resourceEfficiency: false,
   });
-
   const [nestedDropdowns, setNestedDropdowns] = useState({});
+  const [selectedOption, setSelectedOption] = useState(null);
+  const navigate = useNavigate();
 
-  // Data for sections and subsections
   const optionsData = {
     'Land Allocation': [
-      { name: 'Base', subOptions: [] },
       { name: '15% Reduction in Large Farms', subOptions: ['Historical', 'Climate'] },
       { name: '15% Increase in Large Farms', subOptions: ['Historical', 'Climate'] },
       { name: '15% Reduction in Small Farms', subOptions: ['Historical', 'Climate'] },
       { name: '15% Increase in Small Farms', subOptions: ['Historical', 'Climate'] },
     ],
     'Water Allocation': [
-      { name: 'Base', subOptions: [] },
       {
         name: 'Tubewell Extraction Limits',
         subOptions: [
@@ -70,10 +63,19 @@ function Sidebar({ setScenario, setSection, setSubsection, setChartType }) {
   };
 
   const handleScenarioSelection = (section, subsection, scenario) => {
-    if (setSection) setSection(section);
-    if (setSubsection) setSubsection(subsection);
-    if (setScenario) setScenario(scenario);
-    if (setChartType) setChartType('Production'); // Default chart type
+    if (selectedOption === `${section}-${subsection}-${scenario}`) {
+      setSelectedOption(null);
+      if (setSection) setSection(null);
+      if (setSubsection) setSubsection(null);
+      if (setScenario) setScenario(null);
+    } else {
+      setSelectedOption(`${section}-${subsection}-${scenario}`);
+      if (setSection) setSection(section);
+      if (setSubsection) setSubsection(subsection);
+      if (setScenario) setScenario(scenario);
+      if (setMetric) setMetric('Production'); // Default metric
+      navigate('/visualization');
+    }
   };
 
   const renderNestedOptions = (options, section) =>
@@ -97,6 +99,7 @@ function Sidebar({ setScenario, setSection, setSubsection, setChartType }) {
                         type="radio"
                         name={section}
                         value={subOption}
+                        checked={selectedOption === `${section}-${option.name}-${subOption}`}
                         onChange={() =>
                           handleScenarioSelection(section, option.name, subOption)
                         }
@@ -114,6 +117,7 @@ function Sidebar({ setScenario, setSection, setSubsection, setChartType }) {
               type="radio"
               name={section}
               value={option.name}
+              checked={selectedOption === `${section}-${option.name}-null`}
               onChange={() => handleScenarioSelection(section, option.name, null)}
             />
             {option.name}
