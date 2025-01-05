@@ -1,0 +1,149 @@
+.visualization-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-left: 340px; /* Space from the sidebar */
+  margin-top: 20px; /* Add space from the topbar */
+  text-align: center; /* Center the content */
+  font-family: 'Roboto', sans-serif; /* Consistent font style */
+  padding-top: 0; /* Ensure no padding above the visualization container */
+}
+
+.visualization-title {
+  font-size: 24px; /* Reduced font size */
+  margin-bottom: 20px;
+  color: #274472;
+  font-family: 'Roboto', sans-serif; /* Ensure consistent font style */
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.visualization-buttons {
+  display: flex;
+  justify-content: center; /* Center the buttons */
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.visualization-buttons button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Roboto', sans-serif; /* Ensure consistent font style */
+  background-color: #007bff; /* Default blue */
+  color: white;
+}
+
+.visualization-buttons button.acreage {
+  background-color: #4CAF50; /* Acreage */
+  color: white;
+}
+
+.visualization-buttons button.acreage:hover {
+  background-color: #388E3C; /* Acreage hover */
+}
+
+.visualization-buttons button.water {
+  background-color: #2196F3; /* Water */
+  color: white;
+}
+
+.visualization-buttons button.water:hover {
+  background-color: #1976D2; /* Water hover */
+}
+
+.visualization-buttons button.production {
+  background-color: #FF9800; /* Production */
+  color: white;
+}
+
+.visualization-buttons button.production:hover {
+  background-color: #F57C00; /* Production hover */
+}
+
+.visualization-buttons button.income {
+  background-color: #FFC107; /* Income */
+  color: black;
+}
+
+.visualization-buttons button.income:hover {
+  background-color: #FFA000; /* Income hover */
+}
+
+.visualization-buttons button.trade {
+  background-color: #9C27B0; /* Trade */
+  color: white;
+}
+
+.visualization-buttons button.trade:hover {
+  background-color: #7B1FA2; /* Trade hover */
+}
+
+.visualization-buttons button.consumption {
+  background-color: #009688; /* Consumption */
+  color: white;
+}
+
+.visualization-buttons button.consumption:hover {
+  background-color: #00796B; /* Consumption hover */
+}
+
+/* Change colors for the chart type buttons */
+.visualization-buttons button:nth-child(7),
+.visualization-buttons button:nth-child(8),
+.visualization-buttons button:nth-child(9) {
+  background-color: #28a745; /* Green for the chart type buttons */
+}
+
+.visualization-buttons button:hover {
+  opacity: 0.8; /* Slightly reduce opacity on hover */
+}
+
+.visualization-buttons button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}
+
+.visualization-buttons .dropdown {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif; /* Ensure consistent font style */
+  background-color: #ffffff;
+  color: #333;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.visualization-buttons .dropdown:hover {
+  border-color: #007bff; /* Blue border on hover */
+}
+
+.visualization-buttons .dropdown:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center; /* Center the chart */
+  align-items: center;
+  height: 100%;
+  font-family: 'Roboto', sans-serif; /* Ensure consistent font style */
+  overflow-x: auto; /* Add horizontal scroll bar */
+}
+
+/* Additional styling for charts */
+.chart {
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  font-family: 'Roboto', sans-serif; /* Ensure consistent font style */
+}

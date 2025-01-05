@@ -1,0 +1,483 @@
+/* Topbar Container */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px 5px; /* Slimmer topbar */
+  background: #FFFFFF; /* White background */
+  color: #0D47A1; /* Dark blue text */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Deeper shadow */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  margin-bottom: 0; /* Ensure no margin below the topbar */
+  overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+/* Left Section */
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Reduced gap */
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflow */
+}
+
+.topbar-logo {
+  width: 90px; /* Increased logo size */
+  height: auto;
+  /* Removed ticker effect */
+}
+
+.secondary-logo {
+  width: 80px; /* Increased secondary logo size */
+  /* Removed ticker effect */
+}
+
+.dashboard-label {
+  font-weight: bold;
+  font-size: 1.5rem; /* Increased font size */
+  color: #FFFFFF; /* White text */
+  background: #0D47A1; /* Dark blue background for card */
+  padding: 5px 10px; /* Padding for card */
+  border-radius: 5px; /* Rounded corners for card */
+  margin-left: 10px; /* Ensure logos do not overlap the label */
+}
+
+/* Center Section */
+.topbar-center {
+  flex: 1;
+  text-align: center;
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflow */
+}
+
+.topbar-title {
+  font-size: 1.5rem; /* Increased font size */
+  font-weight: bold;
+  color: #0D47A1; /* Dark blue text */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); /* Text shadow */
+  animation: ticker 10s linear infinite; /* Ticker effect */
+}
+
+/* Right Section */
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Reduced gap */
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflow */
+}
+
+.topbar-icon-container {
+  font-size: 1.2rem; /* Smaller icons */
+  cursor: pointer;
+  color: #0D47A1; /* Dark blue icons */
+  transition: transform 0.2s ease-in-out, color 0.3s ease;
+}
+
+.topbar-icon-container:hover {
+  transform: scale(1.2);
+  color: #64B5F6; /* Light blue on hover */
+}
+
+/* Navigation Buttons */
+.nav-button {
+  background: transparent;
+  border: none; /* Remove border */
+  color: #0D47A1; /* Dark blue text */
+  font-size: 0.9rem; /* Smaller font size */
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Reduced gap */
+  cursor: pointer;
+  padding: 5px 10px; /* Reduced padding */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.nav-button:hover {
+  background-color: #64B5F6; /* Light blue background on hover */
+  color: #FFFFFF; /* White text on hover */
+  transform: scale(1.1);
+}
+
+/* Logout Button */
+.logout-button {
+  background: #0D47A1; /* Dark blue button */
+  color: white;
+  border: none; /* Remove border */
+  border-radius: 5px;
+  padding: 5px 10px; /* Reduced padding */
+  font-size: 0.9rem; /* Smaller font size */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background: #64B5F6; /* Light blue on hover */
+}
+
+/* Upload Container */
+.upload-container {
+  position: absolute;
+  top: 50px; /* Adjusted position */
+  right: 10px;
+  background: white;
+  color: #333;
+  border-radius: 10px;
+  padding: 15px; /* Reduced padding */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Deeper shadow */
+}
+
+.upload-container h3 {
+  font-size: 1rem; /* Smaller font size */
+  margin-bottom: 10px; /* Reduced margin */
+}
+
+.file-input {
+  display: block;
+  margin-bottom: 10px; /* Reduced margin */
+}
+
+.upload-button {
+  background: #0D47A1; /* Dark blue button */
+  color: white;
+  border: none;
+  padding: 5px 10px; /* Reduced padding */
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.upload-button:hover {
+  background: #64B5F6; /* Light blue on hover */
+}
+
+/* Registration Form */
+.registration-form {
+  position: absolute;
+  top: 50px; /* Adjusted position */
+  right: 10px;
+  background: white;
+  color: #333;
+  border-radius: 10px;
+  padding: 15px; /* Reduced padding */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Deeper shadow */
+}
+
+.registration-form h3 {
+  font-size: 1.2rem; /* Smaller font size */
+  margin-bottom: 10px; /* Reduced margin */
+}
+
+.registration-form .form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.registration-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.registration-form input,
+.registration-form select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.submit-button {
+  background: #0D47A1;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.submit-button:hover {
+  background: #64B5F6;
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #0D47A1;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: #64B5F6;
+}
+
+/* FAQ Container */
+.faq-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%; /* Reduced width */
+  max-height: 80%;
+  background: #FFFFFF;
+  color: #0D47A1;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+  overflow-x: hidden; /* Ensure no horizontal scrollbar */
+  padding: 20px;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #0D47A1;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.faq-content {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #0D47A1;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: #64B5F6;
+}
+
+.faq-item {
+  margin-bottom: 10px;
+}
+
+.faq-question {
+  cursor: pointer;
+  color: #0D47A1;
+  transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+  color: #64B5F6;
+}
+
+.faq-answer {
+  margin-top: 5px;
+  color: #333;
+  white-space: pre-wrap; /* Ensure answers do not come in one line */
+}
+
+/* Contact Us Container */
+.contact-us-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.contact-us-container {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.contact-us-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #0D47A1;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.contact-us-content {
+  text-align: left;
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #0D47A1;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: #64B5F6;
+}
+
+/* Registration Form Modal and Overlay */
+.registration-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.registration-container {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.registration-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #0D47A1;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.registration-form .form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.registration-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.registration-form input,
+.registration-form select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.submit-button {
+  background: #0D47A1;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.submit-button:hover {
+  background: #64B5F6;
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #0D47A1;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: #64B5F6;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .topbar {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .topbar-left,
+  .topbar-center,
+  .topbar-right {
+    width: 100%;
+    text-align: center;
+  }
+
+  .topbar-icon-container {
+    font-size: 1rem; /* Smaller icons for mobile */
+  }
+
+  .topbar-logo,
+  .secondary-logo {
+    width: 70px; /* Increased logo size for mobile */
+  }
+
+  .dashboard-label {
+    font-size: 1.2rem; /* Increased font size for mobile */
+    color: #FFFFFF; /* White text for mobile */
+    background: #0D47A1; /* Dark blue background for card */
+    padding: 5px 10px; /* Padding for card */
+    border-radius: 5px; /* Rounded corners for card */
+    margin-left: 10px; /* Ensure logos do not overlap the label */
+  }
+
+  .topbar-title {
+    font-size: 1.2rem; /* Increased font size for mobile */
+    color: #0D47A1; /* Dark blue text for mobile */
+  }
+
+  .nav-button {
+    font-size: 0.8rem; /* Smaller font size for mobile */
+    color: #0D47A1; /* Dark blue text for mobile */
+  }
+}
+
+/* Ticker Animation */
+@keyframes ticker {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

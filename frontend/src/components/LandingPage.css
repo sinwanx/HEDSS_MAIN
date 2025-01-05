@@ -1,0 +1,31 @@
+.landing-page {
+  text-align: center;
+  padding: 20px;
+}
+
+.modules {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.module {
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.module img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.module h3 {
+  margin-top: 10px;
+  color: #333;
+}
+
+.module:hover {
+  transform: scale(1.05);
+}
